@@ -1,0 +1,25 @@
+<h1>Product Update</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>
+    <strong>Name:</strong>
+    <input type="text" name="name" value="{{ product.name }}" />
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <input type="text" name="description" value="{{ product.description }}" />
+  </p>
+  <p>
+    <strong>Price:</strong>
+    <input type="number" name="price" value="{{ product.price }}" />
+  </p>
+  <p>
+    <strong>Stock:</strong>
+    <input type="number" name="stock" value="{{ product.stock }}" />
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <input type="text" name="category" value="{{ product.category }}" />
+  </p>
+  <input type="submit" value="Update" />
+</form>

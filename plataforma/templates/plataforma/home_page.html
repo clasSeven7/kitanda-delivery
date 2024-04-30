@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./src/css/media-query.css" /> -->
+    <!-- <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.ico"
+      type="image/x-icon"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
+    <title>Kitanda</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img class="icon-logo" src="./src/assets/logo.png" alt="" />
+        Kitanda
+      </a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#features">Recursos</a>
+        <a href="#products">Produtos</a>
+        <a href="#categories">Categorias</a>
+        <a href="#review">Comentários</a>
+        <a href="#blogs">Blog</a>
+      </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </div>
+
+      <div class="shopping-cart">
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="./src/assets/navbar/navbar-1.png" alt="" />
+          <div class="content">
+            <h3>Alface</h3>
+            <span class="price">R$4.99/-</span>
+            <span class="quantify">qtd : 1</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="./src/assets/navbar/navbar-2.png" alt="" />
+          <div class="content">
+            <h3>Cebola</h3>
+            <span class="price">R$4.99/-</span>
+            <span class="quantify">qtd : 1</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="./src/assets/navbar/navbar-3.png" alt="" />
+          <div class="content">
+            <h3>Tomate</h3>
+            <span class="price">R$4.99/-</span>
+            <span class="quantify">qtd : 1</span>
+          </div>
+        </div>
+        <div class="total">total : R$19.69/-</div>
+        <a href="#" class="btn">checkout</a>
+      </div>
+
+      <form action="" class="login-form">
+        <h3>Login agora</h3>
+        <input type="email" placeholder="seu email" class="box" />
+        <input type="password" placeholder="sua senha" class="box" />
+        <p>esqueça sua senha <a href="#">click aqui</a></p>
+        <p>não tenho uma conta <a href="#">crie agora</a></p>
+        <input type="submit" value="login agora" class="btn" />
+      </form>
+    </header>
+
+    <section class="home" id="home">
+      <div class="content">
+        <h3>
+          produtos frescos e
+          <span>orgânicos</span>
+          para o seu consumo
+        </h3>
+        <p>Da Terra à Sua Mesa, Sabor que Inspira!</p>
+        <a href="#" class="btn">Compre Agora</a>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <h1 class="heading">
+        nossos
+        <span>recursos</span>
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="./src/assets/features/feature-1.png" alt="" />
+          <h3>fresco e orgânico</h3>
+          <p>Experimente a Natureza em Cada Mordida!</p>
+          <a href="#" class="btn">mais informações</a>
+        </div>
+        <div class="box">
+          <img src="./src/assets/features/feature-2.png" alt="" />
+          <h3>delivery grátis</h3>
+          <p>Entrega Grátis: Sabor Saudável Direto à sua Porta!</p>
+          <a href="#" class="btn">mais informações</a>
+        </div>
+        <div class="box">
+          <img src="./src/assets/features/feature-3.png" alt="" />
+          <h3>pagamento fácil</h3>
+          <p>Facilidade de Pagamento: Sabor sem Complicações!</p>
+          <a href="#" class="btn">mais informações</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <h1 class="heading">
+        nossos
+        <span>produtos</span>
+      </h1>
+
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-1.png" alt="" />
+            <h3>alfaces frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-2.png" alt="" />
+            <h3>Cebolas frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-3.png" alt="" />
+            <h3>laranjas frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-4.png" alt="" />
+            <h3>Melancias frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-1.png" alt="" />
+            <h3>alfaces frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-2.png" alt="" />
+            <h3>Cebolas frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-3.png" alt="" />
+            <h3>laranjas frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/products/product-4.png" alt="" />
+            <h3>Melancias frescas</h3>
+            <div class="price">R$4.99/- - 10.99/-</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">adicionar no carinho</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories" id="categories">
+      <h1 class="heading">
+        nossas
+        <span>categorias</span>
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="./src/assets/categories/categorie.png" alt="" />
+          <h3>Vegetais</h3>
+          <p>upto 45% off</p>
+          <a href="#" class="btn">compre agora</a>
+        </div>
+
+        <div class="box">
+          <img src="./src/assets/categories/categorie.png" alt="" />
+          <h3>Frutas frescas</h3>
+          <p>upto 45% off</p>
+          <a href="#" class="btn">compre agora</a
+        </div>
+      </div>
+    </section>
+
+    <section class="review" id="review">
+      <h1 class="heading">
+        nossos
+        <span>comentários</span>
+      </h1>
+
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="./src/assets/review/review-1.png" alt="" />
+            <p>
+              Simplesmente amei a qualidade dos produtos da Kitanda! As alfaces
+              frescas são um verdadeiro deleite para minha dieta. Recomendo!
+              Loja incrível!
+            </p>
+            <h3>Pedro Santos</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/review/review-2.png" alt="" />
+            <p>
+              A facilidade de pagamento e a entrega grátis me conquistaram!
+              Sempre recebo os melhores produtos orgânicos em minha porta.
+            </p>
+            <h3>Ana Silva</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/review/review-3.png" alt="" />
+            <p>
+              A Kitanda me surpreendeu com a rapidez na entrega e a qualidade
+              dos produtos. Agora, não consigo imaginar minha semana sem as
+              verduras fresquinhas que eles oferecem.
+            </p>
+            <h3>Mariana Oliveira</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="./src/assets/review/review-4.png" alt="" />
+            <p>
+              Sou cliente fiel da Kitanda há anos e nunca me decepciono. Os
+              produtos frescos e orgânicos fazem toda a diferença na minha
+              rotina alimentar.
+            </p>
+            <h3>Carlos Rodrigues</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blogs" id="blogs">
+      <h1 class="heading">
+        nossos
+        <span>blogs</span>
+      </h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="./src/assets/blogs/blog-1.png" alt="" />
+          <div class="content">
+            <div class="icons">
+              <a href="#"><i class="fas fa-user"></i>por usuario</a>
+              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
+            </div>
+            <h3>vegetais e frutas frescas e orgânicas</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
+              autem.
+            </p>
+            <a href="#" class="btn">mais informação</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./src/assets/blogs/blog-2.png" alt="" />
+          <div class="content">
+            <div class="icons">
+              <a href="#"><i class="fas fa-user"></i>por usuario</a>
+              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
+            </div>
+            <h3>vegetais e frutas frescas e orgânicas</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
+              autem.
+            </p>
+            <a href="#" class="btn">mais informação</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./src/assets/blogs/blog-3.png" alt="" />
+          <div class="content">
+            <div class="icons">
+              <a href="#"><i class="fas fa-user"></i>por usuario</a>
+              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
+            </div>
+            <h3>vegetais e frutas frescas e orgânicas</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
+              autem.
+            </p>
+            <a href="#" class="btn">mais informação</a>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="./src/assets/blogs/blog-4.png" alt="" />
+          <div class="content">
+            <div class="icons">
+              <a href="#"><i class="fas fa-user"></i>por usuario</a>
+              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
+            </div>
+            <h3>vegetais e frutas frescas e orgânicas</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
+              autem.
+            </p>
+            <a href="#" class="btn">mais informação</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>
+            <div class="logo">
+              Kitanda
+              <img class="icon-logo" src="./src/assets/logo.png" alt="" />
+            </div>
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+            saepe?
+          </p>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-x"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>informações de contato</h3>
+          <a href="#" class="links"
+            ><i class="fas fa-phone"></i>83 9 9564-8345</a
+          >
+          <a href="#" class="links"
+            ><i class="fas fa-phone"></i>83 9 9345-8473</a
+          >
+          <a href="#" class="links"
+            ><i class="fas fa-envelope"></i>kitanda@gmail.com</a
+          >
+          <a href="#" class="links"
+            ><i class="fas fa-map-marker-alt"></i>patos, brasil - 58400-84</a
+          >
+        </div>
+
+        <div class="box">
+          <h3>links rápidos</h3>
+          <a href="#" class="links"><i class="fas fa-arrow-right"></i>home</a>
+          <a href="#" class="links"
+            ><i class="fas fa-arrow-right"></i>Recursos</a
+          >
+          <a href="#" class="links"
+            ><i class="fas fa-arrow-right"></i>Produtos</a
+          >
+          <a href="#" class="links"
+            ><i class="fas fa-arrow-right"></i>categorias</a
+          >
+          <a href="#" class="links"><i class="fas fa-arrow-right"></i>review</a>
+          <a href="#" class="links"><i class="fas fa-arrow-right"></i>blogs</a>
+        </div>
+
+        <div class="box">
+          <h3>boletim de notícias</h3>
+          <p>inscreva-se para receber as últimas atualizações</p>
+          <input type="email" placeholder="seu email" class="email" />
+          <input type="submit" value="inscreva-se" class="btn" />
+          <img src="./src/assets/payment.png" class="payment-image" alt="" />
+        </div>
+      </div>
+
+      <div class="credit">
+        criado por <span>Kitanda</span> | todos os direitos reservados!
+      </div>
+    </section>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./src/js/script.js"></script> -->
+  </body>
+</html>
