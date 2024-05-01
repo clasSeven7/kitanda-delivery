@@ -1,4 +1,4 @@
-from djando.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from ..models import Categorie
 
 
