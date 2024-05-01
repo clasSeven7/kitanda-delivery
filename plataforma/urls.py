@@ -1,15 +1,63 @@
 from django.urls import path
-from . import views
-from .views import *
+from .views import home_page
+
+from .class_views.Resource import (
+   ResourceCreateView,
+   ResourceDetailView,
+   ResourceUpdateView,
+   ResourceDeleteView,
+)
+
+from .class_views.Product import (
+   ProductCreateView,
+   ProductDetailView,
+   ProductUpdateView,
+   ProductDeleteView,
+)
+
+from .class_views.Comment import (
+   CommentCreateView,
+   CommentDetailView,
+   CommentUpdateView,
+   CommentDeleteView,
+)
+
+from .class_views.Categorie import (
+   CategorieCreateView,
+   CategorieDetailView,
+   CategorieUpdateView,
+   CategorieDeleteView,
+)
 
 
 URLSPRODUCTS = [
    path('create-product/', ProductCreateView.as_view(), name='product_create'),
    path('<int:pk>/', ProductDetailView.as_view(), name='product_detail'),
    path('<int:pk>/update-product/', ProductUpdateView.as_view(), name='product_update'),
-   path('<int:pk>/delete-product/', ProductDeleteView.as_view(), name='product_delete')
+   path('<int:pk>/delete-product/', ProductDeleteView.as_view(), name='product_delete'),
+]
+
+URLSRESOURCES = [
+   path('create-resource/', ResourceCreateView.as_view(), name='resource_create'),
+   path('<int:pk>/', ResourceDetailView.as_view(), name='resource_detail'),
+   path('<int:pk>/update-resource/', ResourceUpdateView.as_view(), name='resource_update'),
+   path('<int:pk>/delete-resource/', ResourceDeleteView.as_view(), name='resource_delete'),
+]
+
+URLSCOMMENTS = [
+   path('create-comment/', CommentCreateView.as_view(), name='comment_create'),
+   path('<int:pk>/', CommentDetailView.as_view(), name='comment_detail'),
+   path('<int:pk>/update-comment/', CommentUpdateView.as_view(), name='comment_update'),
+   path('<int:pk>/delete-comment/', CommentDeleteView.as_view(), name='comment_delete'),
+]
+
+URLSCATEGORIES = [
+   path('create-categorie/', CategorieCreateView.as_view(), name='categorie_create'),
+   path('<int:pk>/', CategorieDetailView.as_view(), name='categorie_detail'),
+   path('<int:pk>/update-categorie/', CategorieUpdateView.as_view(), name='categorie_update'),
+   path('<int:pk>/delete-categorie/', CategorieDeleteView.as_view(), name='categorie_delete'),
 ]
 
 urlpatterns = [
-   path('', views.home_page, name='home_page')
-] + URLSPRODUCTS
+   path('', home_page, name='home_page')
+] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS  + URLSCATEGORIES
