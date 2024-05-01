@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'plataforma/css/styles.css' %}" />
-    <link rel="stylesheet" href="{% static 'plataforma/css/media_query.css' %}" />
-     <link
+    <link
+      rel="stylesheet"
+      href="{% static 'plataforma/css/media_query.css' %}"
+    />
+    <link
       rel="shortcut icon"
       href="{% static 'plataforma/assets/favicon.ico' %}"
       type="image/x-icon"
@@ -22,12 +25,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script defer src="{% static 'plataforma/js/script.js' %}"></script>
 
-    <title>Kitanda</title>
+    <title>Kitanda Delivery</title>
   </head>
   <body>
     <header class="header">
       <a href="#" class="logo">
-        <img class="icon-logo" src="{% static 'plataforma/assets/logo.png' %}" alt="logo da plataforma kitanda, representando um carrinho de compras" />
+        <img
+          class="icon-logo"
+          src="{% static 'plataforma/assets/logo.png' %}"
+          alt="logo da plataforma kitanda, representando um carrinho de compras"
+        />
         Kitanda
       </a>
 
@@ -111,7 +118,7 @@
         nossos
         <span>recursos</span>
       </h1>
-    
+
       <div class="box-container">
         {% for resource in resources %}
         <div class="box">
@@ -123,78 +130,74 @@
         {% endfor %}
       </div>
     </section>
-    
 
-   <section class="products" id="products">
-  <h1 class="heading">
-    nossos
-    <span>produtos</span>
-  </h1>
+    <section class="products" id="products">
+      <h1 class="heading">
+        nossos
+        <span>produtos</span>
+      </h1>
 
-  <div class="swiper product-slider">
-    <div class="swiper-wrapper">
-      {% for product in products %}
-      <div class="swiper-slide box">
-        <img src="{{ product.image.url }}" alt="{{ product.title }}" />
-        <h3>{{ product.title }}</h3>
-        <div class="price">R${{ product.value }}</div>
-        <div class="stars">
-          {% for _ in product.stars|floatformat %}
-          <i class="fas fa-star"></i>
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          {% for product in products %}
+          <div class="swiper-slide box">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+            <h3>{{ product.title }}</h3>
+            <div class="price">R${{ product.value }}</div>
+            <div class="stars">
+              {% for _ in product.stars|floatformat %}
+              <i class="fas fa-star"></i>
+              {% endfor %} {% if product.stars|floatformat %}
+              <i class="fas fa-star-half-alt"></i> {% endif %}
+            </div>
+            <a href="#" class="btn">adicionar no carrinho</a>
+          </div>
           {% endfor %}
-          {% if product.stars|floatformat %} <i class="fas fa-star-half-alt"></i> {% endif %}
         </div>
-        <a href="#" class="btn">adicionar no carrinho</a>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-    
+    </section>
 
-<section class="categories" id="categories">
-  <h1 class="heading">
-      nossas
-      <span>categorias</span>
-  </h1>
+    <section class="categories" id="categories">
+      <h1 class="heading">
+        nossas
+        <span>categorias</span>
+      </h1>
 
-  <div class="box-container">
-      {% for categorie in categories %}
-      <div class="box">
+      <div class="box-container">
+        {% for categorie in categories %}
+        <div class="box">
           <img src="{{ categorie.image.url }}" alt="{{ categorie.title }}" />
           <h3>{{ categorie.title }}</h3>
           <p>{{ categorie.description }}</p>
           <a href="#" class="btn">compre agora</a>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-  </div>
-</section>
+    </section>
 
+    <section class="review" id="review">
+      <h1 class="heading">
+        nossos
+        <span>comentários</span>
+      </h1>
 
-<section class="review" id="review">
-  <h1 class="heading">
-      nossos
-      <span>comentários</span>
-  </h1>
-
-  <div class="swiper review-slider">
-      <div class="swiper-wrapper">
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
           {% for comment in comments %}
           <div class="swiper-slide box">
-              <img src="{{ comment.image.url }}" alt="" />
-              <p>{{ comment.description }}</p>
-              <h3>{{ comment.title }}</h3>
-              <div class="stars">
-                  {% for _ in comment.stars|floatformat %}
-                  <i class="fas fa-star"></i>
-                  {% endfor %}
-              </div>
+            <img src="{{ comment.image.url }}" alt="" />
+            <p>{{ comment.description }}</p>
+            <h3>{{ comment.title }}</h3>
+            <div class="stars">
+              {% for _ in comment.stars|floatformat %}
+              <i class="fas fa-star"></i>
+              {% endfor %}
+            </div>
           </div>
           {% endfor %}
+        </div>
       </div>
-  </div>
-</section>
-
+    </section>
 
     <section class="blogs" id="blogs">
       <h1 class="heading">
@@ -335,7 +338,5 @@
         criado por <span>Kitanda</span> | todos os direitos reservados!
       </div>
     </section>
-
-    
   </body>
 </html>

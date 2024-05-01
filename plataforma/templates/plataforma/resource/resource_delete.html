@@ -1,6 +1,7 @@
-<h1>Delete Product</h1>
+{% load static %}
+<h1>Deletar Recursos</h1>
 <form method="post">
   {% csrf_token %}
   <p>Você tem certeza que deseja deletar "{{ product.title }}"?</p>
-  <button type="submit">Delete</button>
+  <button type="submit">Deletar</button>
 </form>

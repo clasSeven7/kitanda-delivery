@@ -1,4 +1,5 @@
-<h1>Atualizar produto</h1>
+{% load static %}
+<h1>Atualizar Recursos</h1>
 <form method="post" enctype="multipart/form-data">
   {% csrf_token %} {{ form.as_p }}
   <button type="submit">Salvar Alterações</button>

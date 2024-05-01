@@ -1,0 +1,14 @@
+{% load static %}
+<h1>Detalhes do Categoria</h1>
+<ul>
+  <li><strong>Título:</strong> {{ product.title }}</li>
+  <li><strong>Valor:</strong> {{ product.value }}</li>
+  <li><strong>Estrelas:</strong> {{ product.stars }}</li>
+  {% if object.image %}
+  <img
+    style="width: 500px"
+    src="{{ object.image.url }}"
+    alt="{{ object.title}}"
+  />
+  {% endif %}
+</ul>

@@ -1,0 +1,6 @@
+{% load static %}
+<h1>Criar Categoria</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Criar</button>
+</form>
