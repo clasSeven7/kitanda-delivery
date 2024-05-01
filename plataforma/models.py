@@ -14,10 +14,16 @@ class Resource(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=200)
     value = models.DecimalField(max_digits=10, decimal_places=2)
+<<<<<<< HEAD
     stars = models.FloatField()
     image = models.ImageField(
         upload_to='products/images/', null=True, blank=True)
 
+=======
+    stars = models.IntegerField()
+    image = models.ImageField(upload_to='products/images/', null=True, blank=True)
+    
+>>>>>>> refs/remotes/origin/main
     def __str__(self):
         return self.title
 

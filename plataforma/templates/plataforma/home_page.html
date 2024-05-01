@@ -1,29 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="./src/css/styles.css" />
-    <link rel="stylesheet" href="./src/css/media-query.css" /> -->
-    <!-- <link
+    <link rel="stylesheet" href="{% static 'plataforma/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'plataforma/css/media_query.css' %}" />
+     <link
       rel="shortcut icon"
-      href="./src/assets/favicon.ico"
+      href="{% static 'plataforma/assets/favicon.ico' %}"
       type="image/x-icon"
-    /> -->
-    <!-- <link
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    /> -->
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="{% static 'plataforma/js/script.js' %}"></script>
+
     <title>Kitanda</title>
   </head>
   <body>
     <header class="header">
       <a href="#" class="logo">
-        <img class="icon-logo" src="./src/assets/logo.png" alt="" />
+        <img class="icon-logo" src="{% static 'plataforma/assets/logo.png' %}" alt="logo da plataforma kitanda, representando um carrinho de compras" />
         Kitanda
       </a>
 
@@ -107,255 +111,90 @@
         nossos
         <span>recursos</span>
       </h1>
-
+    
       <div class="box-container">
+        {% for resource in resources %}
         <div class="box">
-          <img src="./src/assets/features/feature-1.png" alt="" />
-          <h3>fresco e orgânico</h3>
-          <p>Experimente a Natureza em Cada Mordida!</p>
+          <img src="{{ resource.image.url }}" alt="{{ resource.title }}" />
+          <h3>{{ resource.title }}</h3>
+          <p>{{ resource.description }}</p>
           <a href="#" class="btn">mais informações</a>
         </div>
-        <div class="box">
-          <img src="./src/assets/features/feature-2.png" alt="" />
-          <h3>delivery grátis</h3>
-          <p>Entrega Grátis: Sabor Saudável Direto à sua Porta!</p>
-          <a href="#" class="btn">mais informações</a>
-        </div>
-        <div class="box">
-          <img src="./src/assets/features/feature-3.png" alt="" />
-          <h3>pagamento fácil</h3>
-          <p>Facilidade de Pagamento: Sabor sem Complicações!</p>
-          <a href="#" class="btn">mais informações</a>
-        </div>
+        {% endfor %}
       </div>
     </section>
+    
 
-    <section class="products" id="products">
-      <h1 class="heading">
-        nossos
-        <span>produtos</span>
-      </h1>
+   <section class="products" id="products">
+  <h1 class="heading">
+    nossos
+    <span>produtos</span>
+  </h1>
 
-      <div class="swiper product-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-1.png" alt="" />
-            <h3>alfaces frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-2.png" alt="" />
-            <h3>Cebolas frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-3.png" alt="" />
-            <h3>laranjas frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-4.png" alt="" />
-            <h3>Melancias frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
+  <div class="swiper product-slider">
+    <div class="swiper-wrapper">
+      {% for product in products %}
+      <div class="swiper-slide box">
+        <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+        <h3>{{ product.title }}</h3>
+        <div class="price">R${{ product.value }}</div>
+        <div class="stars">
+          {% for _ in product.stars|floatformat %}
+          <i class="fas fa-star"></i>
+          {% endfor %}
+          {% if product.stars|floatformat %} <i class="fas fa-star-half-alt"></i> {% endif %}
         </div>
+        <a href="#" class="btn">adicionar no carrinho</a>
       </div>
-      <div class="swiper product-slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-1.png" alt="" />
-            <h3>alfaces frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+    
 
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-2.png" alt="" />
-            <h3>Cebolas frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
+<section class="categories" id="categories">
+  <h1 class="heading">
+      nossas
+      <span>categorias</span>
+  </h1>
 
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-3.png" alt="" />
-            <h3>laranjas frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/products/product-4.png" alt="" />
-            <h3>Melancias frescas</h3>
-            <div class="price">R$4.99/- - 10.99/-</div>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-            <a href="#" class="btn">adicionar no carinho</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="categories" id="categories">
-      <h1 class="heading">
-        nossas
-        <span>categorias</span>
-      </h1>
-
-      <div class="box-container">
-        <div class="box">
-          <img src="./src/assets/categories/categorie.png" alt="" />
-          <h3>Vegetais</h3>
-          <p>upto 45% off</p>
+  <div class="box-container">
+      {% for categorie in categories %}
+      <div class="box">
+          <img src="{{ categorie.image.url }}" alt="{{ categorie.title }}" />
+          <h3>{{ categorie.title }}</h3>
+          <p>{{ categorie.description }}</p>
           <a href="#" class="btn">compre agora</a>
-        </div>
-
-        <div class="box">
-          <img src="./src/assets/categories/categorie.png" alt="" />
-          <h3>Frutas frescas</h3>
-          <p>upto 45% off</p>
-          <a href="#" class="btn">compre agora</a
-        </div>
       </div>
-    </section>
+      {% endfor %}
+  </div>
+</section>
 
-    <section class="review" id="review">
-      <h1 class="heading">
-        nossos
-        <span>comentários</span>
-      </h1>
 
-      <div class="swiper review-slider">
-        <div class="swiper-wrapper">
+<section class="review" id="review">
+  <h1 class="heading">
+      nossos
+      <span>comentários</span>
+  </h1>
+
+  <div class="swiper review-slider">
+      <div class="swiper-wrapper">
+          {% for comment in comments %}
           <div class="swiper-slide box">
-            <img src="./src/assets/review/review-1.png" alt="" />
-            <p>
-              Simplesmente amei a qualidade dos produtos da Kitanda! As alfaces
-              frescas são um verdadeiro deleite para minha dieta. Recomendo!
-              Loja incrível!
-            </p>
-            <h3>Pedro Santos</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
+              <img src="{{ comment.image.url }}" alt="" />
+              <p>{{ comment.description }}</p>
+              <h3>{{ comment.title }}</h3>
+              <div class="stars">
+                  {% for _ in comment.stars|floatformat %}
+                  <i class="fas fa-star"></i>
+                  {% endfor %}
+              </div>
           </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/review/review-2.png" alt="" />
-            <p>
-              A facilidade de pagamento e a entrega grátis me conquistaram!
-              Sempre recebo os melhores produtos orgânicos em minha porta.
-            </p>
-            <h3>Ana Silva</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/review/review-3.png" alt="" />
-            <p>
-              A Kitanda me surpreendeu com a rapidez na entrega e a qualidade
-              dos produtos. Agora, não consigo imaginar minha semana sem as
-              verduras fresquinhas que eles oferecem.
-            </p>
-            <h3>Mariana Oliveira</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-          </div>
-
-          <div class="swiper-slide box">
-            <img src="./src/assets/review/review-4.png" alt="" />
-            <p>
-              Sou cliente fiel da Kitanda há anos e nunca me decepciono. Os
-              produtos frescos e orgânicos fazem toda a diferença na minha
-              rotina alimentar.
-            </p>
-            <h3>Carlos Rodrigues</h3>
-            <div class="stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-          </div>
-        </div>
+          {% endfor %}
       </div>
-    </section>
+  </div>
+</section>
+
 
     <section class="blogs" id="blogs">
       <h1 class="heading">
@@ -497,7 +336,6 @@
       </div>
     </section>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./src/js/script.js"></script> -->
+    
   </body>
 </html>
