@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Categorie, Comment, Product, Resource
 
 
-def home_page(request):
+def home(request):
     resources = Resource.objects.all()
     products = Product.objects.all()
     categories = Categorie.objects.all()

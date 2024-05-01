@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 
-=======
-from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
->>>>>>> refs/remotes/origin/main
 from ..models import Categorie
 
 

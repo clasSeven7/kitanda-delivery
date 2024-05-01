@@ -8,7 +8,7 @@ from .class_views.Product import (ProductCreateView, ProductDeleteView,
                                   ProductDetailView, ProductUpdateView)
 from .class_views.Resource import (ResourceCreateView, ResourceDeleteView,
                                    ResourceDetailView, ResourceUpdateView)
-from .views import home_page
+from .views import home
 
 URLSPRODUCTS = [
     path('create-product/', ProductCreateView.as_view(), name='product_create'),
@@ -48,5 +48,5 @@ URLSCATEGORIES = [
 ]
 
 urlpatterns = [
-    path('', home_page, name='home_page')
+    path('', home, name='home')
 ] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES

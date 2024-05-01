@@ -5,7 +5,7 @@ from ..models import Comment
 
 class CommentCreateView(CreateView):
     model = Comment
-    fields = ['title', 'description', 'image']
+    fields = ['title',  'description', 'stars', 'image']
     template_name = 'plataforma/comment/comment_create.html'
     success_url = '/'
 
