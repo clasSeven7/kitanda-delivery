@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'plataforma/css/styles.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'plataforma/css/media_query.css' %}"
+    />
+    <link
+      rel="shortcut icon"
+      href="{% static 'plataforma/assets/favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="{% static 'plataforma/js/script.js' %}"></script>
+
+    <title>Kitanda Delivery</title>
+  </head>
+  <body>
+    
+    {% block header %}
+    {% include "components/header.html" %}
+    {% endblock %}
+
+    {% block Hero %}
+    {% include "components/hero.html" %}
+    {% endblock %}
+    
+    {% block resource %}
+    {% include "components/resource.html" %}
+    {% endblock %}
+
+    {% block product %}
+    {% include "components/product.html" %}
+    {% endblock %}
+    
+    {% block categorie %}
+    {% include "components/categorie.html" %}
+    {% endblock %}
+    
+    {% block comment %}
+    {% include "components/comment.html" %}
+    {% endblock %}
+   
+    {% block blog %}
+    {% include "components/blog.html" %}
+    {% endblock %}
+    
+    {% block footer %}
+    {% include "components/footer.html" %}
+    {% endblock %}
+    
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% block content %}
+{% load static %}
+<section class="features" id="features">
+    <h1 class="heading">
+      nossos
+      <span>recursos</span>
+    </h1>
+    <div class="box-container">
+      {% for resource in resources %}
+      <div class="box">
+        <img src="{{ resource.image.url }}" alt="{{ resource.title }}" />
+        <h3>{{ resource.title }}</h3>
+        <p>{{ resource.description }}</p>
+        <a href="#" class="btn">mais informações</a>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

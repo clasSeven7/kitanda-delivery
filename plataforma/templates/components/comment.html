@@ -1,0 +1,26 @@
+{% block content %}
+{% load static %}
+<section class="review" id="review">
+    <h1 class="heading">
+      nossos
+      <span>comentários</span>
+    </h1>
+
+    <div class="swiper review-slider">
+      <div class="swiper-wrapper">
+        {% for comment in comments %}
+        <div class="swiper-slide box">
+          <img src="{{ comment.image.url }}" alt="" />
+          <p>{{ comment.description }}</p>
+          <h3>{{ comment.title }}</h3>
+          <div class="stars">
+            {% for _ in comment.stars|floatformat %}
+            <i class="fas fa-star"></i>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
