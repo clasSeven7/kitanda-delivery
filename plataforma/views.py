@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from blog.models import Blog
 from .models import Categorie, Comment, Product, Resource
 
 
@@ -8,4 +9,5 @@ def home(request):
     products = Product.objects.all()
     categories = Categorie.objects.all()
     comments = Comment.objects.all()
-    return render(request, 'plataforma/home.html', {'resources': resources, 'products': products, 'categories': categories, 'comments': comments})
+    blogs = Blog.objects.all()
+    return render(request, 'plataforma/home.html', {'resources': resources, 'products': products, 'categories': categories, 'comments': comments, 'blogs': blogs})

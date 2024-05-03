@@ -8,7 +8,20 @@ from .class_views.Product import (ProductCreateView, ProductDeleteView,
                                   ProductDetailView, ProductUpdateView)
 from .class_views.Resource import (ResourceCreateView, ResourceDeleteView,
                                    ResourceDetailView, ResourceUpdateView)
+
+from .class_views.Blog import (BlogCreateView, BlogDeleteView, BlogDetailView,
+                               BlogUpdateView)
+
 from .views import home
+
+
+URLSBLOGS = [
+     path('create-blog/', BlogCreateView.as_view(), name='blog_create'),
+     path('<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
+     path('<int:pk>/update-blog/', BlogUpdateView.as_view(), name='blog_update'),
+     path('<int:pk>/delete-blog/', BlogDeleteView.as_view(), name='blog_delete'),
+     ]
+
 
 URLSPRODUCTS = [
     path('create-product/', ProductCreateView.as_view(), name='product_create'),
@@ -49,4 +62,4 @@ URLSCATEGORIES = [
 
 urlpatterns = [
     path('', home, name='home')
-] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES
+] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS

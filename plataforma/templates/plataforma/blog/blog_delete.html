@@ -1,0 +1,7 @@
+{% load static %}
+<h1>Deletar Blog</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Você tem certeza que deseja deletar "{{ blog.title }}"?</p>
+  <button type="submit">Deletar</button>
+</form>

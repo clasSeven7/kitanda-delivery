@@ -35,7 +35,7 @@
           src="{% static 'plataforma/assets/logo.png' %}"
           alt="logo da plataforma kitanda, representando um carrinho de compras"
         />
-        Kitanda
+        Kitanda Delivery
       </a>
 
       <nav class="navbar">
@@ -204,73 +204,25 @@
         nossos
         <span>blogs</span>
       </h1>
-
+    
       <div class="box-container">
+        {% for blog in blogs %}
         <div class="box">
-          <img src="./src/assets/blogs/blog-1.png" alt="" />
+          <img src="{{ blog.image.url }}" alt="{{ blog.title }}" />
           <div class="content">
             <div class="icons">
-              <a href="#"><i class="fas fa-user"></i>por usuario</a>
-              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
+              <a href="#"><i class="fas fa-user"></i>{{ blog.user }}</a>
+              <a href="#"><i class="fas fa-calendar"></i>{{ blog.date|date:"d F Y" }}</a>
             </div>
-            <h3>vegetais e frutas frescas e orgânicas</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
-              autem.
-            </p>
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.description }}</p>
             <a href="#" class="btn">mais informação</a>
           </div>
         </div>
-
-        <div class="box">
-          <img src="./src/assets/blogs/blog-2.png" alt="" />
-          <div class="content">
-            <div class="icons">
-              <a href="#"><i class="fas fa-user"></i>por usuario</a>
-              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
-            </div>
-            <h3>vegetais e frutas frescas e orgânicas</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
-              autem.
-            </p>
-            <a href="#" class="btn">mais informação</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="./src/assets/blogs/blog-3.png" alt="" />
-          <div class="content">
-            <div class="icons">
-              <a href="#"><i class="fas fa-user"></i>por usuario</a>
-              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
-            </div>
-            <h3>vegetais e frutas frescas e orgânicas</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
-              autem.
-            </p>
-            <a href="#" class="btn">mais informação</a>
-          </div>
-        </div>
-
-        <div class="box">
-          <img src="./src/assets/blogs/blog-4.png" alt="" />
-          <div class="content">
-            <div class="icons">
-              <a href="#"><i class="fas fa-user"></i>por usuario</a>
-              <a href="#"><i class="fas fa-calendar"></i>1 de maio de 2021</a>
-            </div>
-            <h3>vegetais e frutas frescas e orgânicas</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
-              autem.
-            </p>
-            <a href="#" class="btn">mais informação</a>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </section>
+    
 
     <section class="footer">
       <div class="box-container">
