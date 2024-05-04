@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Resource(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -34,7 +35,7 @@ class Categorie(models.Model):
 class Comment(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    stars = models.IntegerField()
+    stars = models.FloatField()
     image = models.ImageField(upload_to='comments/images/', )
 
     def __str__(self):
