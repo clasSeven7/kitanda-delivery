@@ -1,76 +1,75 @@
-{% block content %}
-{% load static %}
+{% block content %} {% load static %}
 <header class="header">
-    <a href="#" class="logo">
-      <img
-        class="icon-logo"
-        src="{% static 'plataforma/assets/logo.png' %}"
-        alt="logo da plataforma kitanda, representando um carrinho de compras"
-      />
-      Kitanda Delivery
-    </a>
+  <a href="#" class="logo">
+    <img
+      class="icon-logo"
+      src="{% static 'plataforma/assets/logo.png' %}"
+      alt="logo da plataforma kitanda, representando um carrinho de compras"
+    />
+    Kitanda Delivery
+  </a>
 
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#features">Recursos</a>
-      <a href="#products">Produtos</a>
-      <a href="#categories">Categorias</a>
-      <a href="#review">Comentários</a>
-      <a href="#blogs">Blog</a>
-    </nav>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#features">Recursos</a>
+    <a href="#products">Produtos</a>
+    <a href="#categories">Categorias</a>
+    <a href="#review">Comentários</a>
+    <a href="#blogs">Blog</a>
+  </nav>
 
-    <div class="icons">
-      <div class="fas fa-bars" id="menu-btn"></div>
-      <div class="fas fa-search" id="search-btn"></div>
-      <div class="fas fa-shopping-cart" id="cart-btn"></div>
-      <div class="fas fa-user" id="login-btn"></div>
-    </div>
+  <div class="icons">
+    <div class="fas fa-bars" id="menu-btn"></div>
+    <div class="fas fa-search" id="search-btn"></div>
+    <div class="fas fa-shopping-cart" id="cart-btn"></div>
+    <div class="fas fa-user" id="login-btn"></div>
+  </div>
 
-    <div class="search-form">
-      <input type="search" id="search-box" placeholder="search here..." />
-      <label for="search-box" class="fas fa-search"></label>
-    </div>
+  <div class="search-form">
+    <input type="search" id="search-box" placeholder="search here..." />
+    <label for="search-box" class="fas fa-search"></label>
+  </div>
 
-    <div class="shopping-cart">
-      <div class="box">
-        <i class="fas fa-trash"></i>
-        <img src="./src/assets/navbar/navbar-1.png" alt="" />
-        <div class="content">
-          <h3>Alface</h3>
-          <span class="price">R$4.99/-</span>
-          <span class="quantify">qtd : 1</span>
-        </div>
+  <div class="shopping-cart">
+    <div class="box">
+      <i class="fas fa-trash"></i>
+      <img src="./src/assets/navbar/navbar-1.png" alt="" />
+      <div class="content">
+        <h3>Alface</h3>
+        <span class="price">R$4.99/-</span>
+        <span class="quantify">qtd : 1</span>
       </div>
-      <div class="box">
-        <i class="fas fa-trash"></i>
-        <img src="./src/assets/navbar/navbar-2.png" alt="" />
-        <div class="content">
-          <h3>Cebola</h3>
-          <span class="price">R$4.99/-</span>
-          <span class="quantify">qtd : 1</span>
-        </div>
-      </div>
-      <div class="box">
-        <i class="fas fa-trash"></i>
-        <img src="./src/assets/navbar/navbar-3.png" alt="" />
-        <div class="content">
-          <h3>Tomate</h3>
-          <span class="price">R$4.99/-</span>
-          <span class="quantify">qtd : 1</span>
-        </div>
-      </div>
-      <div class="total">total : R$19.69/-</div>
-      <a href="#" class="btn">checkout</a>
     </div>
+    <div class="box">
+      <i class="fas fa-trash"></i>
+      <img src="./src/assets/navbar/navbar-2.png" alt="" />
+      <div class="content">
+        <h3>Cebola</h3>
+        <span class="price">R$4.99/-</span>
+        <span class="quantify">qtd : 1</span>
+      </div>
+    </div>
+    <div class="box">
+      <i class="fas fa-trash"></i>
+      <img src="./src/assets/navbar/navbar-3.png" alt="" />
+      <div class="content">
+        <h3>Tomate</h3>
+        <span class="price">R$4.99/-</span>
+        <span class="quantify">qtd : 1</span>
+      </div>
+    </div>
+    <div class="total">total : R$19.69/-</div>
+    <a href="#" class="btn">checkout</a>
+  </div>
 
-    <form action="" class="login-form">
-      <h3>Login agora</h3>
-      <input type="email" placeholder="seu email" class="box" />
-      <input type="password" placeholder="sua senha" class="box" />
-      <p>esqueça sua senha <a href="#">click aqui</a></p>
-      <p>não tenho uma conta <a href="#">crie agora</a></p>
-      <input type="submit" value="login agora" class="btn" />
-    </form>
-  </header>
+  <form action="" class="login-form">
+    <h3>Login agora</h3>
+    <input type="email" placeholder="seu email" class="box" />
+    <input type="password" placeholder="sua senha" class="box" />
+    <p>esqueça sua senha <a href="#">click aqui</a></p>
+    <p>não tenho uma conta <a href="#">crie agora</a></p>
+    <input type="submit" value="login agora" class="btn" />
+  </form>
+</header>
 
 {% endblock %}

@@ -1,26 +1,28 @@
-{%  block content %}
-{% load static %}
+{% block content %} {% load static %}
 <section class="blogs" id="blogs">
-    <h1 class="heading">
-      nossos
-      <span>blogs</span>
-    </h1>
-  
-    <div class="box-container">
-      {% for blog in blogs %}
-      <div class="box">
-        <img src="{{ blog.image.url }}" alt="{{ blog.title }}" />
-        <div class="content">
-          <div class="icons">
-            <a href="#"><i class="fas fa-user"></i>{{ blog.user }}</a>
-            <a href="#"><i class="fas fa-calendar"></i>{{ blog.date|date:"d F Y" }}</a>
-          </div>
-          <h3>{{ blog.title }}</h3>
-          <p>{{ blog.description }}</p>
-          <a href="#" class="btn">mais informação</a>
+  <h1 class="heading">
+    nossos
+    <span>blogs</span>
+  </h1>
+
+  <div class="box-container">
+    {% for blog in blogs %}
+    <div class="box">
+      <img src="{{ blog.image.url }}" alt="{{ blog.title }}" />
+      <div class="content">
+        <div class="icons">
+          <a href="#"><i class="fas fa-user"></i>{{ blog.user }}</a>
+          <a href="#"
+            ><i class="fas fa-calendar"></i>{{ blog.date|date:"d F Y" }}</a
+          >
         </div>
+        <h3>{{ blog.title }}</h3>
+        <p>{{ blog.description }}</p>
+        <a href="#" class="btn">mais informação</a>
       </div>
-      {% endfor %}
     </div>
-  </section>
+    {% endfor %}
+  </div>
+</section>
+
 {% endblock %}

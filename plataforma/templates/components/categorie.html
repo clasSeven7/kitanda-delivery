@@ -1,22 +1,21 @@
-{% block content %}
-{% load static %}
+{% block content %} {% load static %}
 
 <section class="categories" id="categories">
-    <h1 class="heading">
-      nossas
-      <span>categorias</span>
-    </h1>
+  <h1 class="heading">
+    nossas
+    <span>categorias</span>
+  </h1>
 
-    <div class="box-container">
-      {% for categorie in categories %}
-      <div class="box">
-        <img src="{{ categorie.image.url }}" alt="{{ categorie.title }}" />
-        <h3>{{ categorie.title }}</h3>
-        <p>{{ categorie.description }}</p>
-        <a href="#" class="btn">compre agora</a>
-      </div>
-      {% endfor %}
+  <div class="box-container">
+    {% for categorie in categories %}
+    <div class="box">
+      <img src="{{ categorie.image.url }}" alt="{{ categorie.title }}" />
+      <h3>{{ categorie.title }}</h3>
+      <p>{{ categorie.description }}</p>
+      <a href="#" class="btn">compre agora</a>
     </div>
-  </section>
+    {% endfor %}
+  </div>
+</section>
 
 {% endblock %}

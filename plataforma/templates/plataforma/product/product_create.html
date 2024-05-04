@@ -1,6 +1,22 @@
-{% load static %}
-<h1>Criar Produto</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Criar</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/product/product-create.css' %}"
+/>
+<link
+  rel="shortcut icon"
+  href="{% static 'plataforma/assets/favicon.ico' %}"
+  type="image/x-icon"
+/>
+<title>Kitanda Delivery - Produto</title>
+<div class="product">
+  <h1 class="heading">
+    Criar
+    <span>Produto</span>
+  </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Criar</button>
+  </form>
+</div>

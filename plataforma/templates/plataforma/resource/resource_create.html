@@ -1,6 +1,22 @@
-{% load static %}
-<h1>Criar Recursos</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Criar</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/resource/resource-create.css' %}"
+/>
+<link
+  rel="shortcut icon"
+  href="{% static 'plataforma/assets/favicon.ico' %}"
+  type="image/x-icon"
+/>
+<title>Kitanda Delivery - Recursos</title>
+<div class="resource">
+  <h1 class="heading">
+    Criar
+    <span>Recursos</span>
+  </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Criar</button>
+  </form>
+</div>

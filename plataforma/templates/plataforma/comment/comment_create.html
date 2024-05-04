@@ -1,6 +1,22 @@
-{% load static %}
-<h1>Adicionar Comentário</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Adicionar</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/comment/comment-create.css' %}"
+/>
+<link
+  rel="shortcut icon"
+  href="{% static 'plataforma/assets/favicon.ico' %}"
+  type="image/x-icon"
+/>
+<title>Kitanda Delivery - Comentário</title>
+<div class="comment">
+  <h1 class="heading">
+    Adicionar
+    <span>Comentário</span>
+  </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Adicionar</button>
+  </form>
+</div>
