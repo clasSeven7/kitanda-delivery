@@ -1,14 +1,25 @@
-{% load static %}
-<h1>Detalhes do Produto</h1>
-<ul>
-  <li><strong>Título:</strong> {{ product.title }}</li>
-  <li><strong>Valor:</strong> {{ product.value }}</li>
-  <li><strong>Estrelas:</strong> {{ product.stars }}</li>
-  {% if object.image %}
-  <img
-    style="width: 500px"
-    src="{{ object.image.url }}"
-    alt="{{ object.title}}"
-  />
-  {% endif %}
-</ul>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/product/product-detail.css' %}"
+/>
+<title>Detalhes - {{ product.title }}</title>
+<div class="product-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>Produto</span>
+  </h1>
+  <ul>
+    <li><strong>Título:</strong> {{ product.title }}</li>
+    <li><strong>Valor:</strong> R${{ product.value }}</li>
+    <li><strong>Estrelas:</strong> {{ product.stars }}</li>
+    {% if object.image %}
+    <img
+      style="width: 300px"
+      src="{{ object.image.url }}"
+      alt="{{ object.title }}"
+    />
+    {% endif %}
+  </ul>
+</div>

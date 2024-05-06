@@ -12,31 +12,26 @@
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.blog {
+.blog-delete {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
   margin: 2rem auto;
   padding: 2rem;
-  width: 50%;
+  width: 30%;
 }
 
-.blog h2 {
+.blog-delete h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.blog form {
-  display: flex;
-  flex-direction: column;
+.blog-delete form p {
+  font-size: 1.7rem;
+  align-items: center;
 }
 
-.blog form p {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.blog form input {
+.blog-delete form input {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -45,15 +40,16 @@
   padding: 1rem;
 }
 
-.blog form button:hover {
-  background: var(--secondary-color);
+.blog-delete form {
+  display: grid;
+  grid-template-columns: 2fr auto;
 }
 
-.blog form input:focus {
+.blog-delete form input:focus {
   border: var(--outline-hover);
 }
 
-.blog form button {
+.blog-delete form button {
   background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
@@ -61,22 +57,9 @@
   font-size: 1.7rem;
   margin: 1rem 0;
   padding: 1rem;
+  grid-column: span 2;
 }
 
-.blog form p label {
-  font-size: 1.7rem;
-  margin: 1rem 0;
-}
-
-.blog form p textarea {
-  background: #f9f9f9;
-  border: var(--outline);
-  border-radius: 0.5rem;
-  font-size: 1.7rem;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-
-.blog form p input {
-  margin-right: 1rem;
+.blog-delete form button:hover {
+  background: var(--secondary-color);
 }

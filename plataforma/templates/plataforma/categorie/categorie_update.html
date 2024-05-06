@@ -1,7 +1,17 @@
-{% load static %}
-<h1>Atualizar Categoria</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Salvar Alterações</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/categorie/categorie-update.css' %}"
+/>
+<title>Atualizar - {{ categorie.title }}</title>
+<div class="categorie-update">
+  <h1 class="heading">
+    Atualizar
+    <span>Categoria</span>
+  </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+  </form>
 </div>

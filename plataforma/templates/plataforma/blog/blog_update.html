@@ -1,7 +1,18 @@
-{% load static %}
-<h1>Atualizar Blog</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %} {{ form.as_p }}
-  <button type="submit">Salvar Alterações</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/blog/blog-update.css' %}"
+/>
+<title>Atualizar - {{ blog.title }}</title>
+<div class="blog-update">
+  <h1 class="heading">
+      Atualizar
+      <span>Blog</span>
+    </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+  </form>
+  </div>
 </div>

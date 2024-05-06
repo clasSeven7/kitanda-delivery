@@ -12,7 +12,7 @@
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.blog {
+.comment-update {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -21,22 +21,23 @@
   width: 50%;
 }
 
-.blog h2 {
+.comment-update h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.blog form {
+.comment-update form {
   display: flex;
   flex-direction: column;
 }
 
-.blog form p {
+.comment-update form p:nth-child(2),
+.comment-update form p:nth-child(3) {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.blog form input {
+.comment-update form input {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -45,15 +46,11 @@
   padding: 1rem;
 }
 
-.blog form button:hover {
-  background: var(--secondary-color);
-}
-
-.blog form input:focus {
+.comment-update form input:focus {
   border: var(--outline-hover);
 }
 
-.blog form button {
+.comment-update form button {
   background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
@@ -63,12 +60,7 @@
   padding: 1rem;
 }
 
-.blog form p label {
-  font-size: 1.7rem;
-  margin: 1rem 0;
-}
-
-.blog form p textarea {
+.comment-update form textarea {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -77,6 +69,23 @@
   padding: 1rem;
 }
 
-.blog form p input {
+.comment-update form button:hover {
+  background: var(--secondary-color);
+}
+
+.comment-update form p label {
+  font-size: 1.7rem;
+  margin: 1rem 0;
+}
+
+.comment-update form p input {
   margin-right: 1rem;
+}
+
+.comment-delete form button:hover {
+  background: var(--secondary-color);
+}
+
+.comment-delete form button:hover {
+  background: var(--secondary-color);
 }

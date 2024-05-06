@@ -1,13 +1,26 @@
-{% load static %}
-<h1>Detalhes do Blog:</h1>
-<ul>
-  <li><strong>Título:</strong> {{ blog.title }}</li>
-  <li><strong>Descrição:</strong> {{ blog.description }}</li>
-  {% if object.image %}
-  <img
-    style="width: 500px"
-    src="{{ object.image.url }}"
-    alt="{{ object.title}}"
-  />
-  {% endif %}
-</ul>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/blog/blog-detail.css' %}"
+/>
+<title>Detalhes - {{ blog.title }}</title>
+<div class="blog-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>Blog</span>
+  </h1>
+  <ul>
+    <li><strong>Usuário:</strong> {{ blog.user }}</li>
+    <li><strong>Data:</strong> {{ blog.date }}</li>
+    <li><strong>Título:</strong> {{ blog.title }}</li>
+    <li><strong>Descrição:</strong> {{ blog.description }}</li>
+    {% if object.image %}
+    <img
+      style="width: 300px"
+      src="{{ object.image.url }}"
+      alt="{{ object.title}}"
+    />
+    {% endif %}
+  </ul>
+</div>

@@ -1,13 +1,24 @@
-{% load static %}
-<h1>Detalhes do Recursos:</h1>
-<ul>
-  <li><strong>Título:</strong> {{ product.title }}</li>
-  <li><strong>Descrição:</strong> {{ product.description }}</li>
-  {% if object.image %}
-  <img
-    style="width: 500px"
-    src="{{ object.image.url }}"
-    alt="{{ object.title}}"
-  />
-  {% endif %}
-</ul>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/resource/resource-detail.css' %}"
+/>
+<title>Detalhes - {{ resource.title }}</title>
+<div class="resource-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>Recursos</span>
+  </h1>
+  <ul>
+    <li><strong>Título:</strong> {{ resource.title }}</li>
+    <li><strong>Descrição:</strong> {{ resource.description }}</li>
+    {% if object.image %}
+    <img
+      style="width: 300px"
+      src="{{ object.image.url }}"
+      alt="{{ object.title}}"
+    />
+    {% endif %}
+  </ul>
+</div>

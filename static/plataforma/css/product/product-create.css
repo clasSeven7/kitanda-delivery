@@ -12,7 +12,7 @@
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.product {
+.product-create {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -21,17 +21,22 @@
   width: 50%;
 }
 
-.product h2 {
+.product-create h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.product form {
+.product-create form {
   display: flex;
   flex-direction: column;
 }
 
-.product form input {
+.product-create form p {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.product-create form input {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -40,11 +45,11 @@
   padding: 1rem;
 }
 
-.product form input:focus {
+.product-create form input:focus {
   border: var(--outline-hover);
 }
 
-.product form button {
+.product-create form button {
   background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
@@ -54,15 +59,15 @@
   padding: 1rem;
 }
 
-.product form button:hover {
+.product-create form button:hover {
   background: var(--secondary-color);
 }
 
-.product form p label {
+.product-create form p label {
   font-size: 1.7rem;
   margin: 1rem 0;
 }
 
-.product form p input {
+.product-create form p input {
   margin-right: 1rem;
 }

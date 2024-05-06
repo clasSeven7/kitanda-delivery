@@ -1,7 +1,28 @@
-{% load static %}
-<h1>Deletar Categoria</h1>
-<form method="post">
-  {% csrf_token %}
-  <p>Você tem certeza que deseja deletar "{{ categorie.title }}"?</p>
-  <button type="submit">Deletar</button>
-</form>
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/categorie/categorie-delete.css' %}"
+/>
+<title>Deletar - {{ categorie.title }}</title>
+<div class="categorie-delete">
+  <h1 class="heading">
+    Deletar
+    <span>Categoria</span>
+  </h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      Você tem certeza que deseja deletar
+      <strong>"{{ categorie.title }}"</strong>?
+    </p>
+    {% if object.image %}
+    <img
+      style="width: 100px"
+      src="{{ object.image.url }}"
+      alt="{{ object.title }}"
+    />
+    {% endif %}
+    <button type="submit">Deletar</button>
+  </form>
+</div>

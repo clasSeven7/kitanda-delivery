@@ -12,7 +12,7 @@
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.comment {
+.comment-create {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -21,17 +21,22 @@
   width: 50%;
 }
 
-.comment h2 {
+.comment-create h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.comment form {
+.comment-create form {
   display: flex;
   flex-direction: column;
 }
 
-.comment form input {
+.comment-create form p {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.comment-create form input {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -40,15 +45,15 @@
   padding: 1rem;
 }
 
-.comment form button:hover {
+.comment-create form button:hover {
   background: var(--secondary-color);
 }
 
-.comment form input:focus {
+.comment-create form input:focus {
   border: var(--outline-hover);
 }
 
-.comment form button {
+.comment-create form button {
   background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
@@ -58,12 +63,12 @@
   padding: 1rem;
 }
 
-.comment form p label {
+.comment-create form p label {
   font-size: 1.7rem;
   margin: 1rem 0;
 }
 
-.comment form p textarea {
+.comment-create form p textarea {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -72,6 +77,6 @@
   padding: 1rem;
 }
 
-.comment form p input {
+.comment-create form p input {
   margin-right: 1rem;
 }

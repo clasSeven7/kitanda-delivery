@@ -12,7 +12,7 @@
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.categorie {
+.categorie-create {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -21,17 +21,22 @@
   width: 50%;
 }
 
-.categorie h2 {
+.categorie-create h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.categorie form {
+.categorie-create form {
   display: flex;
   flex-direction: column;
 }
 
-.categorie form input {
+.categorie-create form p {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.categorie-create form input {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -40,15 +45,15 @@
   padding: 1rem;
 }
 
-.categorie form button:hover {
+.categorie-create form button:hover {
   background: var(--secondary-color);
 }
 
-.categorie form input:focus {
+.categorie-create form input:focus {
   border: var(--outline-hover);
 }
 
-.categorie form button {
+.categorie-create form button {
   background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
@@ -58,12 +63,12 @@
   padding: 1rem;
 }
 
-.categorie form p label {
+.categorie-create form p label {
   font-size: 1.7rem;
   margin: 1rem 0;
 }
 
-.categorie form p textarea {
+.categorie-create form p textarea {
   background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
@@ -72,6 +77,6 @@
   padding: 1rem;
 }
 
-.categorie form p input {
+.categorie-create form p input {
   margin-right: 1rem;
 }
