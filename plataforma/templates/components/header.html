@@ -30,46 +30,14 @@
     <label for="search-box" class="fas fa-search"></label>
   </div>
 
-  <div class="shopping-cart">
-    <div class="box">
-      <i class="fas fa-trash"></i>
-      <img src="./src/assets/navbar/navbar-1.png" alt="" />
-      <div class="content">
-        <h3>Alface</h3>
-        <span class="price">R$4.99/-</span>
-        <span class="quantify">qtd : 1</span>
-      </div>
-    </div>
-    <div class="box">
-      <i class="fas fa-trash"></i>
-      <img src="./src/assets/navbar/navbar-2.png" alt="" />
-      <div class="content">
-        <h3>Cebola</h3>
-        <span class="price">R$4.99/-</span>
-        <span class="quantify">qtd : 1</span>
-      </div>
-    </div>
-    <div class="box">
-      <i class="fas fa-trash"></i>
-      <img src="./src/assets/navbar/navbar-3.png" alt="" />
-      <div class="content">
-        <h3>Tomate</h3>
-        <span class="price">R$4.99/-</span>
-        <span class="quantify">qtd : 1</span>
-      </div>
-    </div>
-    <div class="total">total : R$19.69/-</div>
-    <a href="#" class="btn">checkout</a>
-  </div>
+  {% block shopcart %}
+  {% include 'components/shop-cart.html' %}
+  {% endblock %}
 
-  <form action="" class="login-form">
-    <h3>Login agora</h3>
-    <input type="email" placeholder="seu email" class="box" />
-    <input type="password" placeholder="sua senha" class="box" />
-    <p>esqueça sua senha <a href="#">click aqui</a></p>
-    <p>não tenho uma conta <a href="#">crie agora</a></p>
-    <input type="submit" value="login agora" class="btn" />
-  </form>
+  {% block login %}
+  {% include 'components/auth/login.html' %}
+  {% endblock %}
+
 </header>
 
 {% endblock %}

@@ -1,0 +1,22 @@
+{% block content %}
+{% load static %}
+
+<div class="shopping-cart">
+  {% for item in sh %}
+  <div class="box">
+    <i class="fas fa-trash"></i>
+    <img src="{{ item.image.url }}" alt="{{ item.title }}" />
+    <div class="content">
+      <h3>{{ item.title }}</h3>
+      <span class="price">R$ {{ item.value }}/-</span>
+      <span class="quantify">qtd : 1</span>
+    </div>
+  </div>
+  {% empty %}
+  <p>O carrinho está vazio</p>
+  {% endfor %}
+  <div class="total">total : R$ {{ total_cart }}/-</div>
+  <a href="#" class="btn">checkout</a>
+</div> 
+
+{% endblock %}

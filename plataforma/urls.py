@@ -10,17 +10,10 @@ from .class_views.Product import (ProductCreateView, ProductDeleteView,
                                   ProductDetailView, ProductUpdateView)
 from .class_views.Resource import (ResourceCreateView, ResourceDeleteView,
                                    ResourceDetailView, ResourceUpdateView)
+from .class_views.Auth import (CustomLoginView, CustomRegisterView)
+
+
 from .views import home
-
-URLSBLOGS = [
-    path('blog/create/', BlogCreateView.as_view(), name='blog_create'),
-    path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
-    path('blog/<int:pk>/update/',
-         BlogUpdateView.as_view(), name='blog_update'),
-    path('blog/<int:pk>/delete/',
-         BlogDeleteView.as_view(), name='blog_delete'),
-]
-
 
 URLSPRODUCTS = [
     path('product/create/', ProductCreateView.as_view(), name='product_create'),
@@ -60,6 +53,20 @@ URLSCATEGORIES = [
          CategorieDeleteView.as_view(), name='categorie_delete'),
 ]
 
+URLSBLOGS = [
+    path('blog/create/', BlogCreateView.as_view(), name='blog_create'),
+    path('blog/<int:pk>/', BlogDetailView.as_view(), name='blog_detail'),
+    path('blog/<int:pk>/update/',
+         BlogUpdateView.as_view(), name='blog_update'),
+    path('blog/<int:pk>/delete/',
+         BlogDeleteView.as_view(), name='blog_delete'),
+]
+
+URLSAUTH = [
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('register/', CustomRegisterView.as_view(), name='register'),
+]
+
 urlpatterns = [
     path('', home, name='home')
-] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS
+] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS + URLSAUTH
