@@ -6,7 +6,11 @@
       <h3>
         <div class="logo">
           Kitanda
-          <img class="icon-logo" src="./src/assets/logo.png" alt="" />
+          <img
+            class="icon-logo"
+            src="{% static 'plataforma/assets/logo.png' %}"
+            alt="{{ object.title }}"
+          />
         </div>
       </h3>
       <p>
@@ -50,7 +54,7 @@
       <img
         src="{% static 'plataforma/assets/payment.png' %}"
         class="payment-image"
-        alt=""
+        alt="{{ object.title }}"
       />
     </div>
   </div>
