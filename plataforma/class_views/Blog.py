@@ -1,6 +1,8 @@
-from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
+                                  UpdateView)
 
 from blog.models import Blog
+
 
 class BlogCreateView(CreateView):
     model = Blog
@@ -8,9 +10,11 @@ class BlogCreateView(CreateView):
     template_name = 'plataforma/blog/blog_create.html'
     success_url = '/'
 
+
 class BlogDetailView(DetailView):
     model = Blog
-    template_name = 'plataforma/blog/blog_detail.html'  
+    template_name = 'plataforma/blog/blog_detail.html'
+
 
 class BlogUpdateView(UpdateView):
     model = Blog
@@ -18,7 +22,14 @@ class BlogUpdateView(UpdateView):
     template_name = 'plataforma/blog/blog_update.html'
     success_url = '/'
 
+
 class BlogDeleteView(DeleteView):
     model = Blog
     template_name = 'plataforma/blog/blog_delete.html'
     success_url = '/'
+
+
+class BlogListView(ListView):
+    model = Blog
+    template_name = 'plataforma/blog/blog_list.html'
+    context_object_name = 'blogs'

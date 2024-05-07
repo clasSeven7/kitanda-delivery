@@ -1,0 +1,63 @@
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/resource/resource-list.css' %}"
+/>
+<title>Listar Recursos</title>
+<div class="resource-list">
+  <h1 class="heading">
+    Listas
+    <span>Recursos</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de Publicação</option>
+      <option value="title">Título</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="resource-list">
+  <ul>
+    {% for resource in resources %}
+    <li class="resource-item">
+      <span class="resource-item-name">{{ resource.title }}</span>
+      <span class="resource-item-date">
+        <img
+          style="width: 100px"
+          src="{{ resource.image.url }}"
+          alt="{{ resource.title }}"
+        />
+      </span>
+      <a href="{% url 'resource_detail' resource.pk %}">Detalhes</a>
+      <a href="{% url 'resource_update' resource.pk %}">Editar</a>
+      <a href="{% url 'resource_delete' resource.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if is_paginated %}
+  <ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li><a href="?page=1">&laquo; Primeira</a></li>
+    <li>
+      <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; Anterior</a>
+    </li>
+    {% endif %} {% for num in page_obj.paginator.page_range %}
+    ----------------{% if page_obj.number == num %}
+    <li class="active"><span>{{ num }}</span></li>
+    {% else %}
+    <li><a href="?page={{ num }}">{{ num }}</a></li>
+    {% endif %} {% endfor %} {% if page_obj.has_next %}
+    <li>
+      <a href="?page={{ page_obj.next_page_number }}">Próxima &rsaquo;</a>
+    </li>
+    <li>
+      <a href="?page={{ page_obj.paginator.num_pages }}">Última &raquo;</a>
+    </li>
+    {% endif %}
+  </ul>
+  {% endif %}
+</div>

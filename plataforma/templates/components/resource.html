@@ -10,7 +10,7 @@
       <img src="{{ resource.image.url }}" alt="{{ resource.title }}" />
       <h3>{{ resource.title }}</h3>
       <p>{{ resource.description }}</p>
-      <a href="#" class="btn">mais informações</a>
+      <a href="{% url 'resource_list'%}" class="btn">mais informações</a>
     </div>
     {% endfor %}
   </div>
