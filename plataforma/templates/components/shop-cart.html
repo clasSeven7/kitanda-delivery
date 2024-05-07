@@ -1,18 +1,1 @@
-{% block content %}
-{% load static %}
 
-<div class="shopping-cart">
-    {% for product in shop_cart %}
-    <div class="box">
-        <i class="fas fa-trash"></i>
-        <img src="{{ product.image.url }}" alt="{{ product.name }}" />
-        <div class="content">
-            <h3>{{ product.name }}</h3>
-            <span class="price">R$ {{ product.price }}/-</span>
-            <!-- Aqui não temos a quantidade, pois não estamos lidando com um carrinho dinâmico -->
-        </div>
-    </div>
-    {% endfor %}
-    <!-- Total e botão de checkout podem ser removidos se não forem necessários neste contexto estático -->
-</div>
-{% endblock %}
