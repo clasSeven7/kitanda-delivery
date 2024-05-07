@@ -1,3 +1,6 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
@@ -29,7 +32,8 @@ class BlogDeleteView(DeleteView):
     success_url = '/'
 
 
-class BlogListView(ListView):
+class BlogListView(LoginRequiredMixin, ListView):
     model = Blog
     template_name = 'plataforma/blog/blog_list.html'
     context_object_name = 'blogs'
+    paginate_by = 2
