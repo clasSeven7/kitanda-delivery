@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
@@ -41,3 +42,12 @@ class BlogListView(LoginRequiredMixin, ListView):
     template_name = 'plataforma/blog/blog_list.html'
     context_object_name = 'blogs'
     paginate_by = 2
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')
+        if query:
+            queryset = queryset.filter(title__icontains=query)
+            print(queryset.query)
+        orderby = self.request.GET.get('pub_date', 'title')
+        return queryset.order_by(orderby)

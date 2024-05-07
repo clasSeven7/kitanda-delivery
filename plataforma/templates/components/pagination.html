@@ -1,6 +1,6 @@
 {% block content %}
 {% load static %}
-
+<link rel="stylesheet" href="{% static 'plataforma/css/pagination.css' %}" />
 {% if is_paginated %}
 <ul class="pagination ">
   {% if page_obj.has_previous %}

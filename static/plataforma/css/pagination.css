@@ -7,24 +7,24 @@
 
 .pagination li {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 0.5rem;
 }
 
 .pagination li.active span {
   background: var(--secondary-color);
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .pagination li a,
 .pagination li span {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 0.8rem 1.6rem;
   color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  border: 0.1rem solid var(--secondary-color);
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
 }
 
 .pagination li a:hover {
