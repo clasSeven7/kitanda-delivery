@@ -1,4 +1,7 @@
+from django.shortcuts import render
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+
+from plataforma.forms import CommentForm
 
 from ..models import Comment
 
@@ -8,6 +11,10 @@ class CommentCreateView(CreateView):
     fields = ['title',  'description', 'stars', 'image']
     template_name = 'plataforma/comment/comment_create.html'
     success_url = '/'
+
+    def get(self, request):
+        form_comment = CommentForm()
+        return render(request, 'plataforma/comment/comment_create.html', {'form_comment': form_comment})
 
 
 class CommentDetailView(DetailView):

@@ -1,4 +1,7 @@
+from django.shortcuts import render
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
+
+from plataforma.forms import CategorieForm
 
 from ..models import Categorie
 
@@ -8,6 +11,10 @@ class CategorieCreateView(CreateView):
     fields = ['title', 'description', 'image']
     template_name = 'plataforma/categorie/categorie_create.html'
     success_url = '/'
+
+    def get(self, request):
+        form_categorie = CategorieForm()
+        return render(request, 'plataforma/categorie/categorie_create.html', {'form_categorie': form_categorie})
 
 
 class CategorieDetailView(DetailView):

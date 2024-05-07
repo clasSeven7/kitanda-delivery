@@ -13,6 +13,7 @@ def home(request):
     blogs = Blog.objects.all()
     cartItems = Product.objects.all()
     total = sum(item.value * item.quantity for item in cartItems)
+
     return render(request, 'home.html', {'resources': resources, 'products': products, 'categories': categories, 'comments': comments, 'blogs': blogs, 'cartItems': cartItems, 'total': total})
 
 

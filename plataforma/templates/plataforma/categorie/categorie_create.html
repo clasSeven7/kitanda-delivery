@@ -11,7 +11,7 @@
     <span>Categoria</span>
   </h1>
   <form method="post" enctype="multipart/form-data">
-    {% csrf_token %} {{ form.as_p }}
+    {% csrf_token %} {{ form_categorie.as_p }}
     <button type="submit">Criar</button>
   </form>
 </div>

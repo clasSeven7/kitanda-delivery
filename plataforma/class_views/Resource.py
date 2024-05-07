@@ -1,8 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import render
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
+
+from plataforma.forms import ResourceForm
 
 from ..models import Resource
 
@@ -12,6 +13,10 @@ class ResourceCreateView(CreateView):
     fields = ['title', 'description', 'image']
     template_name = 'plataforma/resource/resource_create.html'
     success_url = '/'
+
+    def get(self, request):
+        form_resource = ResourceForm()
+        return render(request, 'plataforma/resource/resource_create.html', {'form_resource': form_resource})
 
 
 class ResourceDetailView(DetailView):

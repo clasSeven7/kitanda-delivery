@@ -1,10 +1,10 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import render
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
 from blog.models import Blog
+from plataforma.forms import BlogForm
 
 
 class BlogCreateView(CreateView):
@@ -12,6 +12,10 @@ class BlogCreateView(CreateView):
     fields = ['user', 'date', 'title', 'description', 'image']
     template_name = 'plataforma/blog/blog_create.html'
     success_url = '/'
+
+    def get(self, request):
+        form_blog = BlogForm()
+        return render(request, 'plataforma/blog/blog_create.html', {'form_blog': form_blog})
 
 
 class BlogDetailView(DetailView):
