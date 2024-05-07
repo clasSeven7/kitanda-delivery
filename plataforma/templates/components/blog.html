@@ -18,7 +18,7 @@
         </div>
         <h3>{{ blog.title }}</h3>
         <p>{{ blog.description }}</p>
-        <a href="#" class="btn">mais informação</a>
+        <a href="{% url 'blog_list'%}" class="btn">mais informação</a>
       </div>
     </div>
     {% endfor %}

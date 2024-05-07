@@ -1,0 +1,13 @@
+.login-form .user {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-form .user h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}

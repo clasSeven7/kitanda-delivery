@@ -1,0 +1,38 @@
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.pagination li.active span {
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.pagination li a,
+.pagination li span {
+  display: inline-block;
+  padding: 5px 10px;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pagination li a:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  margin: 0;
+}

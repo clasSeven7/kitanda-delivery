@@ -45,9 +45,7 @@ class Comment(models.Model):
 class CartItems(models.Model):
     products = models.ManyToManyField(Product)
     total = models.DecimalField(max_digits=10, decimal_places=2)
-    quantity = models.IntegerField() 
-
-
+    quantity = models.IntegerField()
 
     def __str__(self):
         return str(self.total)

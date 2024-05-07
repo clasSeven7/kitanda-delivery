@@ -1,0 +1,46 @@
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link rel="stylesheet" href="{% static 'plataforma/css/pagination.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/blog/blog-list.css' %}"
+/>
+<title>Listar Recursos</title>
+<div class="blog-list">
+  <h1 class="heading">
+    Listas
+    <span>Blog</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de Publicação</option>
+      <option value="title">Título</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="blog-list">
+  <ul>
+    {% for blog in blogs %}
+    <li class="resource-item">
+      <span class="resource-item-name">{{ blog.title }}</span>
+      <span class="resource-item-date">
+        <img
+          style="width: 100px"
+          src="{{ blog.image.url }}"
+          alt="{{ blog.title }}"
+        />
+      </span>
+      <a href="{% url 'blog_detail' blog.pk %}">Detalhes</a>
+      <a href="{% url 'blog_update' blog.pk %}">Editar</a>
+      <a href="{% url 'blog_delete' blog.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% block pagination %}
+{% include "components/pagination.html" %}
+{% endblock %}

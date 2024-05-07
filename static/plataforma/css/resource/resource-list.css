@@ -1,0 +1,133 @@
+.heading {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.heading span {
+  background: var(--secondary-color);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem 3rem;
+  clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.resource-list {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 50%;
+}
+
+.resource-list form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.resource-list form input {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.resource-list form input:focus {
+  border: var(--outline-hover);
+}
+
+.resource-list form select {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.resource-list form select:focus {
+  border: var(--outline-hover);
+}
+
+.resource-list form button {
+  background: var(--primary-color);
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.resource-list ul {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
+}
+
+.resource-list ul li {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 1rem 0;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.resource-list ul li span {
+  display: block;
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+}
+
+.resource-list ul li button {
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+.resource-list ul li button:hover {
+  background: var(--primary-color);
+}
+
+.resource-list ul li a {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
+.resource-list ul li a:hover {
+  text-decoration: underline;
+}
+
+.resource-list ul li p {
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+}
+
+.resource-list ul li img {
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.resource-list ul li img:hover {
+  cursor: pointer;
+}
+
+.resource-list ul li img {
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
+}
