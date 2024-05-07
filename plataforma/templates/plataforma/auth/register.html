@@ -1,6 +1,13 @@
-
-{% block content %} <h2>Regristrar</h2>
-<form method="post">
-{% csrf_token %} {{ form.as_p }}
-<button type="submit">Entrar</button> </form>
-{% endblock %}
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link rel="stylesheet" href="{% static 'plataforma/css/auth/register.css' %}" />
+<title>Registrar</title>
+<div class="register">
+  <h2 class="heading">
+    <span>Registrar</span>
+  </h2>
+  <form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Registrar</button>
+  </form>
+</div>

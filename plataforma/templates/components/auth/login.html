@@ -2,14 +2,14 @@
 <div class="login-form">
   <h2>Conecte-se</h2>
   <form action="post">
-    <button type="submit" class="btn" formaction="{% url 'login' %}">Login</button>
-    <button type="submit" class="btn" formaction="{% url 'register' %}">Registrar</button>
+    <button type="submit" class="btn" formaction="{% url 'login' %}">
+      Login
+    </button>
+    <button type="submit" class="btn" formaction="{% url 'register' %}">
+      Registrar
+    </button>
     {% csrf_token %}
   </form>
-<p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
-
+  <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
 </div>
 {% endblock %}
-
-
-
