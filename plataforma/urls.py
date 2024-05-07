@@ -13,7 +13,7 @@ from .class_views.Product import (ProductCreateView, ProductDeleteView,
 from .class_views.Resource import (ResourceCreateView, ResourceDeleteView,
                                    ResourceDetailView, ResourceListView,
                                    ResourceUpdateView)
-from .views import home
+from .views import home, newsletter_confirmation
 
 URLSPRODUCTS = [
     path('product/create/', ProductCreateView.as_view(), name='product_create'),
@@ -70,6 +70,11 @@ URLSAUTH = [
     path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]
 
+URLSNEWSLETTER = [
+    path('newsletter/confirmation/', newsletter_confirmation,
+         name='newsletter_confirmation'),
+]
+
 urlpatterns = [
     path('', home, name='home')
-] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS + URLSAUTH
+] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS + URLSAUTH + URLSNEWSLETTER

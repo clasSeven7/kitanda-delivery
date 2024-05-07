@@ -1,0 +1,14 @@
+{% include "components/header-simple.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header.css' %}" />
+<link rel="stylesheet" href="{% static 'plataforma/css/newsletter/confirmation.css' %}" />
+<div class="confirmation">
+  <h1 class="heading">
+    Email
+    <span>Enviado</span>
+  </h1>
+  <div class="confirmation-content">
+    <h1>Obrigado por se inscrever no boletim!</h1>
+    <p>Você receberá as últimas atualizações diretamente na sua caixa de entrada.</p>
+    <a href="{% url 'home' %}" class="btn">Voltar para a página inicial</a>
+  </div>
+</div>

@@ -1,11 +1,12 @@
-{% block content %} {% load static %}
+{% block content %} 
+{% load static %}
 <link
   rel="shortcut icon"
   href="{% static 'plataforma/assets/favicon.ico' %}"
   type="image/x-icon"
 />
 <header class="header">
-  <a href="#" class="logo">
+  <a href="{% url 'home' %}" class="logo">
     <img
       class="icon-logo"
       src="{% static 'plataforma/assets/logo.png' %}"

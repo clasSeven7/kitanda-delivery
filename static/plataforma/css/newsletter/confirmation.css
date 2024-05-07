@@ -1,0 +1,51 @@
+.heading {
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.heading span {
+  background: var(--secondary-color);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem 3rem;
+  clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.confirmation {
+  background: #fff;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 30%;
+}
+
+.confirmation-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.confirmation-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.confirmation-content a {
+  background: var(--secondary-color);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  cursor: pointer;
+}
+
+.confirmation-content a:hover {
+  background: var(--primary-color);
+}

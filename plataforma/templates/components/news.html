@@ -1,0 +1,15 @@
+{% block content %}
+{% load static %}
+<div class="container">
+    <div class="box">
+      <h3>Boletim de Notícias</h3>
+      <p>Inscreva-se para receber as últimas atualizações</p>
+      <form action="{% url 'newsletter_confirmation' %}" method="post">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Seu email" class="email" required>
+        <input type="submit" value="Inscrever-se" class="btn">
+      </form>
+      <img src="{% static 'plataforma/assets/payment.png' %}" alt="{{ object.title }}" class="payment-image">
+    </div>
+  </div>
+{% endblock %}

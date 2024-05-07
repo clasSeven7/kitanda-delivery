@@ -1,5 +1,5 @@
-{% block content %} {% load static %}
-
+{% block content %} 
+{% load static %}
 <section class="footer">
   <div class="box-container">
     <div class="box">
@@ -38,27 +38,19 @@
 
     <div class="box">
       <h3>links rápidos</h3>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>home</a>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>Recursos</a>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>Produtos</a>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>categorias</a>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>review</a>
-      <a href="#" class="links"><i class="fas fa-arrow-right"></i>blogs</a>
+      <a href="#home" class="links"><i class="fas fa-arrow-right"></i>home</a>
+      <a href="#features" class="links"><i class="fas fa-arrow-right"></i>Recursos</a>
+      <a href="#products" class="links"><i class="fas fa-arrow-right"></i>Produtos</a>
+      <a href="#categories" class="links"><i class="fas fa-arrow-right"></i>categorias</a>
+      <a href="#review" class="links"><i class="fas fa-arrow-right"></i>review</a>
+      <a href="#blogs" class="links"><i class="fas fa-arrow-right"></i>blogs</a>
     </div>
 
-    <div class="box">
-      <h3>boletim de notícias</h3>
-      <p>inscreva-se para receber as últimas atualizações</p>
-      <input type="email" placeholder="seu email" class="email" />
-      <input type="submit" value="inscreva-se" class="btn" />
-      <img
-        src="{% static 'plataforma/assets/payment.png' %}"
-        class="payment-image"
-        alt="{{ object.title }}"
-      />
-    </div>
+    {% block news %}
+    {% include 'components/news.html'%}
+    {% endblock %}
+
   </div>
-
   <div class="credit">
     criado por <span>Kitanda</span> | todos os direitos reservados!
   </div>
