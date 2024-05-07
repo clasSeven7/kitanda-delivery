@@ -8,38 +8,43 @@
 
   <div class="swiper product-slider">
     <div class="swiper-wrapper">
-      {% for product in products %}
-      <div class="swiper-slide box">
-        <img src="{{ product.image.url }}" alt="{{ product.title }}" />
-        <h3>{{ product.title }}</h3>
-        <div class="price">R${{ product.value }}</div>
-        <div class="stars">
-          {% for _ in product.stars|floatformat %}
-          <i class="fas fa-star"></i>
-          {% endfor %} {% if product.stars|floatformat %}
-          <i class="fas fa-star-half-alt"></i> {% endif %}
-        </div>
-        <a href="#" class="btn">adicionar no carrinho</a>
-      </div>
-      {% endfor %}
+
+  {% for product in products %}
+  <div class="swiper-slide box">
+    <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+    <h3>{{ product.title }}</h3>
+    <div class="price">R${{ product.value }}</div>
+    <div class="stars">
+      {% for _ in product.stars|floatformat %}
+      <i class="fas fa-star"></i>
+      {% endfor %} {% if product.stars|floatformat %}
+      <i class="fas fa-star-half-alt"></i> {% endif %}
+    </div>
+    <a href="#" class="btn" data-product-id="{{ product.id }}">adicionar no carrinho</a>
+  </div>
+  {% endfor %}
+
     </div>
   </div>
   <div class="swiper product-slider">
     <div class="swiper-wrapper">
-      {% for product in products %}
-      <div class="swiper-slide box">
-        <img src="{{ product.image.url }}" alt="{{ product.title }}" />
-        <h3>{{ product.title }}</h3>
-        <div class="price">R${{ product.value }}</div>
-        <div class="stars">
-          {% for _ in product.stars|floatformat %}
-          <i class="fas fa-star"></i>
-          {% endfor %} {% if product.stars|floatformat %}
-          <i class="fas fa-star-half-alt"></i> {% endif %}
-        </div>
-        <a href="#" class="btn">adicionar no carrinho</a>
-      </div>
-      {% endfor %}
+     
+
+  {% for product in products %}
+  <div class="swiper-slide box">
+    <img src="{{ product.image.url }}" alt="{{ product.title }}" />
+    <h3>{{ product.title }}</h3>
+    <div class="price">R${{ product.value }}</div>
+    <div class="stars">
+      {% for _ in product.stars|floatformat %}
+      <i class="fas fa-star"></i>
+      {% endfor %} {% if product.stars|floatformat %}
+      <i class="fas fa-star-half-alt"></i> {% endif %}
+    </div>
+    <a href="#" class="btn" data-product-id="{{ product.id }}">adicionar no carrinho</a>
+  </div>
+  {% endfor %}
+
     </div>
   </div>
 </section>
