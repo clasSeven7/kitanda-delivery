@@ -15,4 +15,6 @@ def home(request):
     blogs = Blog.objects.all()
     return render(request, 'home.html', {'resources': resources, 'products': products, 'categories': categories, 'comments': comments, 'blogs': blogs})
 
-
+def shop_cart(request):
+    shop_cart = Product.objects.all()
+    return render(request, 'components/shop_cart.html', {'shop_cart': shop_cart})

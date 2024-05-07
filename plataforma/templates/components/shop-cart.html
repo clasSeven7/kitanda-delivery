@@ -2,34 +2,17 @@
 {% load static %}
 
 <div class="shopping-cart">
-        <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="./src/assets/navbar/navbar-1.png" alt="" />
-          <div class="content">
-            <h3>Alface</h3>
-            <span class="price">R$4.99/-</span>
-            <span class="quantify">qtd : 1</span>
-          </div>
+    {% for product in shop_cart %}
+    <div class="box">
+        <i class="fas fa-trash"></i>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+        <div class="content">
+            <h3>{{ product.name }}</h3>
+            <span class="price">R$ {{ product.price }}/-</span>
+            <!-- Aqui não temos a quantidade, pois não estamos lidando com um carrinho dinâmico -->
         </div>
-        <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="./src/assets/navbar/navbar-2.png" alt="" />
-          <div class="content">
-            <h3>Cebola</h3>
-            <span class="price">R$4.99/-</span>
-            <span class="quantify">qtd : 1</span>
-          </div>
-        </div>
-        <div class="box">
-          <i class="fas fa-trash"></i>
-          <img src="./src/assets/navbar/navbar-3.png" alt="" />
-          <div class="content">
-            <h3>Tomate</h3>
-            <span class="price">R$4.99/-</span>
-            <span class="quantify">qtd : 1</span>
-          </div>
-        </div>
-        <div class="total">total : R$19.69/-</div>
-        <a href="#" class="btn">checkout</a>
-      </div>
+    </div>
+    {% endfor %}
+    <!-- Total e botão de checkout podem ser removidos se não forem necessários neste contexto estático -->
+</div>
 {% endblock %}
