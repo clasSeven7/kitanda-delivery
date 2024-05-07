@@ -70,6 +70,8 @@ URLSAUTH = [
     path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]
 
+
+
 urlpatterns = [
-    path('', home, name='home')
+    path('', home, name='home'),
 ] + URLSPRODUCTS + URLSRESOURCES + URLSCOMMENTS + URLSCATEGORIES + URLSBLOGS + URLSAUTH
