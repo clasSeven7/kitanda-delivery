@@ -17,6 +17,7 @@ class Product(models.Model):
     stars = models.FloatField()
     image = models.ImageField(
         upload_to='products/images/', null=True, blank=True)
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title

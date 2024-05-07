@@ -1,1 +1,18 @@
-
+{% block content %}
+{% load static %}
+<div class="shopping-cart">
+  {% for item in cartItems %}
+  <div class="box">
+    <i class="fas fa-trash"></i>
+    <img src="{{ item.image.url }}" alt="{{ item.title }}" />
+    <div class="content">
+      <h3>{{ item.title }}</h3>
+      <span class="price">R$ {{ item.value }}  /</span>
+      <span class="quantify">qtd : {{ item.quantity }}</span>
+    </div>
+  </div>
+  {% endfor %}
+  <div class="total">total : R$ {{ total }}</div>
+  <a href="#" class="btn">checkout</a>
+</div>
+{% endblock %}
