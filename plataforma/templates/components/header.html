@@ -9,35 +9,25 @@
     Kitanda Delivery
   </a>
 
-  <nav class="navbar">
-    <a href="#home">Home</a>
-    <a href="#features">Recursos</a>
-    <a href="#products">Produtos</a>
-    <a href="#categories">Categorias</a>
-    <a href="#review">Comentários</a>
-    <a href="#blogs">Blog</a>
-  </nav>
+  {% block navbar %} 
+  {% include 'components/navbar.html' %} 
+  {% endblock %}
 
-  <div class="icons">
-    <div class="fas fa-bars" id="menu-btn"></div>
-    <div class="fas fa-search" id="search-btn"></div>
-    <div class="fas fa-shopping-cart" id="cart-btn"></div>
-    <div class="fas fa-user" id="login-btn"></div>
-  </div>
+  {% block icon %} 
+  {% include 'components/icon.html' %} 
+  {% endblock %}
 
-  <div class="search-form">
-    <input type="search" id="search-box" placeholder="search here..." />
-    <label for="search-box" class="fas fa-search"></label>
-  </div>
+  {% block search %} 
+  {% include 'components/search-form.html' %} 
+  {% endblock %}
 
-  {% block shopcart %}
+  {% block shopcart %} 
   {% include 'components/shop-cart.html' %}
-  {% endblock %}
+  {% endblock %} 
 
-  {% block login %}
-  {% include 'components/auth/login.html' %}
+  {% block login %} 
+  {% include 'components/auth/login.html' %} 
   {% endblock %}
-
 </header>
 
 {% endblock %}

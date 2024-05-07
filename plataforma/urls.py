@@ -1,6 +1,7 @@
 from django.urls import path
 
-from .class_views.Auth import CustomLoginView, CustomRegisterView
+from .class_views.Auth import (CustomLoginView, CustomLogoutView,
+                               CustomRegisterView)
 from .class_views.Blog import (BlogCreateView, BlogDeleteView, BlogDetailView,
                                BlogListView, BlogUpdateView)
 from .class_views.Categorie import (CategorieCreateView, CategorieDeleteView,
@@ -66,6 +67,7 @@ URLSBLOGS = [
 URLSAUTH = [
     path('login/', CustomLoginView.as_view(), name='login'),
     path('register/', CustomRegisterView.as_view(), name='register'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]
 
 urlpatterns = [

@@ -1,0 +1,9 @@
+{% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/auth/logged.css'%}" />
+
+<h2>Olá, {{ user.username }}</h2>
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button class="btn" type="submit">Log out</button>
+</form>
+{% endblock %}
